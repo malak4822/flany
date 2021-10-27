@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ZmienneClass extends ChangeNotifier {
+  var _maxliczbarund;
   var graczepoczatkowi = 0;
   var _gracze;
-  var _rundy;
+  var _runda;
   var msdcntr2 = 0;
   var msdcntr1 = 0;
+  var _currentrunda = 1;
   List<int> czasy1 = [];
   List<int> czasy2 = [];
 
@@ -25,8 +27,8 @@ class ZmienneClass extends ChangeNotifier {
     return msdcntr1;
   }
 
-  int get iloscRund {
-    return _rundy;
+  int get numerRundy {
+    return _runda;
   }
 
   void liczenienietrafien1() {
@@ -67,6 +69,21 @@ class ZmienneClass extends ChangeNotifier {
   }
 
   void setRoundCount({required int liczbarund}) {
-    _rundy = liczbarund;
+    liczbarund == _maxliczbarund;
+  }
+
+  int get aktrunda {
+    return _currentrunda;
+  }
+
+  void dodRund() {
+    _currentrunda = _currentrunda + 1;
+  }
+
+  void resetliczb() {
+    msdcntr1 = 0;
+    msdcntr2 = 0;
+    czasy1 = 0 as List<int>;
+    czasy2 = 0 as List<int>;
   }
 }

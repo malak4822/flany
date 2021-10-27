@@ -1,3 +1,4 @@
+import 'package:flany/game2.dart';
 import 'package:flany/zmienne.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -121,13 +122,45 @@ class _resGamePageState extends State<resGamePage> {
                     ),
                   ],
                 ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                            transitionsBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation,
+                                Widget child) {
+                              animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.fastLinearToSlowEaseIn);
+
+                              return ScaleTransition(
+                                scale: animation,
+                                child: child,
+                                alignment: Alignment.center,
+                              );
+                            },
+                            transitionDuration:
+                                const Duration(milliseconds: 300),
+                            pageBuilder: (BuildContext context,
+                                Animation<double> animation,
+                                Animation<double> secAnimation) {
+                              return SecGamePage();
+                            }));
+                    Provider.of<ZmienneClass>(context, listen: false).dodRund();
+                    print("es");
+                  },
+                  child: Text("End Round",
+                      style: GoogleFonts.almarai(
+                          fontSize: 20.0, color: Colors.white)),
+                )
               ]),
               Text(
-                "W drużynie było po ${_gracze} graczy",
+                "W drużynie jest po ${_gracze} graczy",
                 style:
                     GoogleFonts.overpass(fontSize: 20.0, color: Colors.white),
               ),
-              SizedBox(height: 30.0)
             ])));
   }
 }

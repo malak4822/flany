@@ -44,7 +44,7 @@ class _restwoGamePageState extends State<restwoGamePage> {
               Column(children: [
                 SizedBox(height: 50.0),
                 Text(
-                  "Czasy drużyn:",
+                  "Czas drużyny:",
                   style:
                       GoogleFonts.overpass(fontSize: 40.0, color: Colors.white),
                 ),
@@ -68,7 +68,7 @@ class _restwoGamePageState extends State<restwoGamePage> {
                     ]),
                 SizedBox(height: 60.0),
                 Text(
-                  "Nietrafienia drużyn:",
+                  "Nietrafienia drużyny:",
                   style:
                       GoogleFonts.overpass(fontSize: 38.0, color: Colors.white),
                 ),
@@ -93,7 +93,7 @@ class _restwoGamePageState extends State<restwoGamePage> {
                 ),
               ]),
               Text(
-                "W drużynie było po ${_gracze} graczy",
+                "W drużynie jest po ${_gracze} graczy",
                 style:
                     GoogleFonts.overpass(fontSize: 20.0, color: Colors.white),
               ),

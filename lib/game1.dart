@@ -1,4 +1,5 @@
 import 'package:flany/game2.dart';
+import 'package:flany/informations.dart';
 import 'package:flany/res1.dart';
 import 'package:flany/results.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +30,8 @@ class _FirGamePageState extends State<FirGamePage> {
   var _currenttime1;
   @override
   Widget build(BuildContext context) {
+    var _currentrunda = Provider.of<ZmienneClass>(context).aktrunda;
     var _gracze = Provider.of<ZmienneClass>(context).iloscGraczy;
-    var _rundy = Provider.of<ZmienneClass>(context).iloscRund;
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 84, 84, 84),
         appBar: AppBar(
@@ -63,17 +64,21 @@ class _FirGamePageState extends State<FirGamePage> {
             PageView(
               children: [
                 Stack(children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text("Osoby: $_gracze",
-                        style: GoogleFonts.overpass(
-                            color: Colors.white, fontSize: 20.0)),
-                  ),
-                  Align(
-                      alignment: Alignment.topRight,
-                      child: Text("Rundy: $_rundy",
-                          style: GoogleFonts.overpass(
-                              color: Colors.white, fontSize: 20.0))),
+                  Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text("Osoby: $_gracze",
+                            style: GoogleFonts.overpass(
+                                color: Colors.white, fontSize: 20.0)),
+                      )),
+                  Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Align(
+                          alignment: Alignment.topRight,
+                          child: Text("Runda nr: $_currentrunda",
+                              style: GoogleFonts.overpass(
+                                  color: Colors.white, fontSize: 20.0)))),
                   ListView(
                     children: [
                       Column(
@@ -200,63 +205,32 @@ class _FirGamePageState extends State<FirGamePage> {
                             onPressed: () {
                               Provider.of<ZmienneClass>(context, listen: false)
                                   .liczenienietrafien1();
-                              var _rundy = Provider.of<ZmienneClass>(context,
-                                      listen: false)
-                                  .iloscRund;
-                              if (_rundy == 0) {
-                                Navigator.pushReplacement(
-                                    context,
-                                    PageRouteBuilder(
-                                        transitionsBuilder:
-                                            (BuildContext context,
-                                                Animation<double> animation,
-                                                Animation<double> secAnimation,
-                                                Widget child) {
-                                          animation = CurvedAnimation(
-                                              parent: animation,
-                                              curve: Curves
-                                                  .fastLinearToSlowEaseIn);
 
-                                          return ScaleTransition(
-                                            scale: animation,
-                                            child: child,
-                                            alignment: Alignment.center,
-                                          );
-                                        },
-                                        transitionDuration:
-                                            const Duration(milliseconds: 300),
-                                        pageBuilder: (BuildContext context,
-                                            Animation<double> animation,
-                                            Animation<double> secAnimation) {
-                                          return resGamePage(missed1: msdcntr1);
-                                        }));
-                              } else
-                                Navigator.pushReplacement(
-                                    context,
-                                    PageRouteBuilder(
-                                        transitionsBuilder:
-                                            (BuildContext context,
-                                                Animation<double> animation,
-                                                Animation<double> secAnimation,
-                                                Widget child) {
-                                          animation = CurvedAnimation(
-                                              parent: animation,
-                                              curve: Curves
-                                                  .fastLinearToSlowEaseIn);
+                              Navigator.pushReplacement(
+                                  context,
+                                  PageRouteBuilder(
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation,
+                                          Widget child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve:
+                                                Curves.fastLinearToSlowEaseIn);
 
-                                          return ScaleTransition(
-                                            scale: animation,
-                                            child: child,
-                                            alignment: Alignment.center,
-                                          );
-                                        },
-                                        transitionDuration:
-                                            const Duration(milliseconds: 300),
-                                        pageBuilder: (BuildContext context,
-                                            Animation<double> animation,
-                                            Animation<double> secAnimation) {
-                                          return SecGamePage();
-                                        }));
+                                        return ScaleTransition(
+                                          scale: animation,
+                                          child: child,
+                                          alignment: Alignment.center,
+                                        );
+                                      },
+                                      transitionDuration:
+                                          const Duration(milliseconds: 300),
+                                      pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secAnimation) {
+                                        return SecGamePage();
+                                      }));
                             },
                             child: const Icon(Icons.close,
                                 color: Colors.red, size: 35),
