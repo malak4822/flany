@@ -41,6 +41,7 @@ dependencies:
   provider: ^5.0.0
   carousel_slider: ^4.0.0
   get: ^4.3.8
+  screenshot: ^1.2.3
   
 
 dev_dependencies:

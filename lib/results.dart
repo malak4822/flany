@@ -36,6 +36,7 @@ class _resGamePageState extends State<resGamePage> {
     var msdcntr2 = Provider.of<ZmienneClass>(context).missedcounter2;
     var suma1 = Provider.of<ZmienneClass>(context).sumaczasu1;
     var suma2 = Provider.of<ZmienneClass>(context).sumaczasu2;
+    var _currentrunda = Provider.of<ZmienneClass>(context).aktrunda;
 
     return MultiProvider(
         providers: [
@@ -43,23 +44,22 @@ class _resGamePageState extends State<resGamePage> {
         ],
         child: Scaffold(
             body: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     gradient: LinearGradient(colors: [
                   Color.fromARGB(255, 8, 240, 196),
                   Color.fromARGB(255, 8, 236, 124)
                 ])),
                 child: Stack(alignment: Alignment.bottomCenter, children: [
                   Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                       child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Text(
-                            "W drużynie jest po ${_gracze} graczy",
+                        alignment: Alignment.topCenter,
+                        child: Text("Runda: $_currentrunda",
                             style: GoogleFonts.overpass(
-                                fontSize: 15.0, color: Colors.white),
-                          ))),
+                                color: Colors.white, fontSize: 17.0)),
+                      )),
                   Column(children: [
-                    SizedBox(height: 50.0),
+                    const SizedBox(height: 50.0),
                     Text(
                       "Czasy drużyn:",
                       style: GoogleFonts.overpass(
