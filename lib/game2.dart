@@ -39,7 +39,7 @@ class _SecGamePageState extends State<SecGamePage> {
         centerTitle: true,
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -53,7 +53,7 @@ class _SecGamePageState extends State<SecGamePage> {
               "[num] 2",
               style: GoogleFonts.overpass(
                   textStyle:
-                      const TextStyle(fontSize: 20.0, color: Colors.white)),
+                      const TextStyle(fontSize: 20.0, color: Colors.black45)),
             )
           ],
         ),
@@ -111,7 +111,7 @@ class _SecGamePageState extends State<SecGamePage> {
                                   .add(StopWatchExecute.start);
                             },
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.amber,
+                                primary: Colors.white,
                                 side: const BorderSide(
                                     width: 1,
                                     color: Color.fromARGB(255, 8, 240, 196)),
@@ -121,7 +121,7 @@ class _SecGamePageState extends State<SecGamePage> {
                                       BorderRadius.all(Radius.circular(80)),
                                 )),
                             child: const Icon(Icons.circle,
-                                color: Colors.white, size: 30)),
+                                color: Colors.black26, size: 30)),
                         const SizedBox(width: 40.0),
                         //
                         //PRZYCISK TRAFIONY
@@ -160,7 +160,7 @@ class _SecGamePageState extends State<SecGamePage> {
                                       }));
                             },
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.amber,
+                                primary: Colors.white,
                                 side: const BorderSide(
                                     width: 1,
                                     color: Color.fromARGB(255, 8, 240, 196)),
@@ -170,7 +170,7 @@ class _SecGamePageState extends State<SecGamePage> {
                                       BorderRadius.all(Radius.circular(80)),
                                 )),
                             child: const Icon(Icons.stop_rounded,
-                                color: Colors.white, size: 40)),
+                                color: Colors.black26, size: 40)),
                       ],
                     ),
                     const SizedBox(height: 30.0),
@@ -227,7 +227,7 @@ class _SecGamePageState extends State<SecGamePage> {
                         child: const Icon(Icons.close,
                             color: Colors.red, size: 35),
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.amber,
+                          primary: Colors.white12,
                           side:
                               const BorderSide(color: Colors.white, width: 1.0),
                           padding: const EdgeInsets.all(40.0),

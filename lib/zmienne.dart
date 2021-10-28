@@ -11,7 +11,7 @@ class ZmienneClass extends ChangeNotifier {
   List<int> czasy1 = [];
   List<int> czasy2 = [];
 
-  int get iloscGraczy {
+  int? get iloscGraczy {
     return _gracze;
   }
 
@@ -27,7 +27,7 @@ class ZmienneClass extends ChangeNotifier {
     return msdcntr1;
   }
 
-  int get numerRundy {
+  int? get numerRundy {
     return _runda;
   }
 
@@ -78,12 +78,13 @@ class ZmienneClass extends ChangeNotifier {
 
   void dodRund() {
     _currentrunda = _currentrunda + 1;
+    resetliczb();
   }
 
   void resetliczb() {
     msdcntr1 = 0;
     msdcntr2 = 0;
-    czasy1 = 0 as List<int>;
-    czasy2 = 0 as List<int>;
+    czasy1.clear();
+    czasy2.clear();
   }
 }

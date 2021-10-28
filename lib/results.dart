@@ -42,125 +42,155 @@ class _resGamePageState extends State<resGamePage> {
           ChangeNotifierProvider.value(value: ZmienneClass()),
         ],
         child: Scaffold(
-            backgroundColor: const Color.fromARGB(255, 84, 84, 84),
-            body: Stack(alignment: Alignment.bottomCenter, children: [
-              Column(children: [
-                SizedBox(height: 50.0),
-                Text(
-                  "Czasy drużyn:",
-                  style:
-                      GoogleFonts.overpass(fontSize: 40.0, color: Colors.white),
-                ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "${suma1 / 1000}",
-                          style: GoogleFonts.overpass(
-                              fontSize: 50.0, color: Colors.white),
-                        ),
-                        width: 150.0,
-                        height: 150.0,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 8, 236, 124),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "${suma2 / 1000}",
-                          style: GoogleFonts.overpass(
-                              fontSize: 50.0, color: Colors.white),
-                        ),
-                        width: 150.0,
-                        height: 150.0,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 8, 240, 196),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ]),
-                SizedBox(height: 60.0),
-                Text(
-                  "Nietrafienia drużyn:",
-                  style:
-                      GoogleFonts.overpass(fontSize: 38.0, color: Colors.white),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "$msdcntr1",
-                        style: GoogleFonts.overpass(
-                            fontSize: 50.0, color: Colors.white),
-                      ),
-                      width: 150.0,
-                      height: 150.0,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 8, 236, 124),
-                        shape: BoxShape.circle,
-                      ),
+            body: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  Color.fromARGB(255, 8, 240, 196),
+                  Color.fromARGB(255, 8, 236, 124)
+                ])),
+                child: Stack(alignment: Alignment.bottomCenter, children: [
+                  Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Text(
+                            "W drużynie jest po ${_gracze} graczy",
+                            style: GoogleFonts.overpass(
+                                fontSize: 15.0, color: Colors.white),
+                          ))),
+                  Column(children: [
+                    SizedBox(height: 50.0),
+                    Text(
+                      "Czasy drużyn:",
+                      style: GoogleFonts.overpass(
+                          fontSize: 40.0, color: Colors.white),
                     ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "$msdcntr2",
-                        style: GoogleFonts.overpass(
-                            fontSize: 50.0, color: Colors.white),
-                      ),
-                      width: 150.0,
-                      height: 150.0,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 8, 240, 196),
-                        shape: BoxShape.circle,
-                      ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "${suma1 / 1000}",
+                              style: GoogleFonts.overpass(
+                                  fontSize: 50.0, color: Colors.white),
+                            ),
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 8, 236, 124),
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.white,
+                                      blurRadius: 4,
+                                      spreadRadius: 1)
+                                ]),
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "${suma2 / 1000}",
+                              style: GoogleFonts.overpass(
+                                  fontSize: 50.0, color: Colors.white),
+                            ),
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 8, 240, 196),
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.white,
+                                      blurRadius: 4,
+                                      spreadRadius: 1)
+                                ]),
+                          ),
+                        ]),
+                    SizedBox(height: 60.0),
+                    Text(
+                      "Nietrafienia drużyn:",
+                      style: GoogleFonts.overpass(
+                          fontSize: 38.0, color: Colors.white),
                     ),
-                  ],
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        PageRouteBuilder(
-                            transitionsBuilder: (BuildContext context,
-                                Animation<double> animation,
-                                Animation<double> secAnimation,
-                                Widget child) {
-                              animation = CurvedAnimation(
-                                  parent: animation,
-                                  curve: Curves.fastLinearToSlowEaseIn);
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "$msdcntr1",
+                            style: GoogleFonts.overpass(
+                                fontSize: 50.0, color: Colors.white),
+                          ),
+                          width: 150.0,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 8, 236, 124),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.white,
+                                    blurRadius: 4,
+                                    spreadRadius: 1)
+                              ]),
+                        ),
+                        Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "$msdcntr2",
+                            style: GoogleFonts.overpass(
+                                fontSize: 50.0, color: Colors.white),
+                          ),
+                          width: 150.0,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 8, 240, 196),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.white,
+                                    blurRadius: 4,
+                                    spreadRadius: 1)
+                              ]),
+                        ),
+                      ],
+                    ),
+                  ]),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          PageRouteBuilder(
+                              transitionsBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secAnimation,
+                                  Widget child) {
+                                animation = CurvedAnimation(
+                                    parent: animation,
+                                    curve: Curves.fastLinearToSlowEaseIn);
 
-                              return ScaleTransition(
-                                scale: animation,
-                                child: child,
-                                alignment: Alignment.center,
-                              );
-                            },
-                            transitionDuration:
-                                const Duration(milliseconds: 300),
-                            pageBuilder: (BuildContext context,
-                                Animation<double> animation,
-                                Animation<double> secAnimation) {
-                              return SecGamePage();
-                            }));
-                    Provider.of<ZmienneClass>(context, listen: false).dodRund();
-                    print("es");
-                  },
-                  child: Text("End Round",
-                      style: GoogleFonts.almarai(
-                          fontSize: 20.0, color: Colors.white)),
-                )
-              ]),
-              Text(
-                "W drużynie jest po ${_gracze} graczy",
-                style:
-                    GoogleFonts.overpass(fontSize: 20.0, color: Colors.white),
-              ),
-            ])));
+                                return ScaleTransition(
+                                  scale: animation,
+                                  child: child,
+                                  alignment: Alignment.center,
+                                );
+                              },
+                              transitionDuration:
+                                  const Duration(milliseconds: 300),
+                              pageBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secAnimation) {
+                                return SecGamePage();
+                              }));
+                      Provider.of<ZmienneClass>(context, listen: false)
+                          .dodRund();
+                      print("es");
+                    },
+                    child: Text("end round",
+                        style: GoogleFonts.almarai(
+                            fontSize: 20.0, color: Colors.white)),
+                  )
+                ]))));
   }
 }
