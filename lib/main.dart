@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: const Color.fromARGB(200, 84, 84, 84),
       appBar: AppBar(
         toolbarHeight: 70.0,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.white,
         title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text("FLANKI",
               style: GoogleFonts.josefinSans(
@@ -46,7 +46,7 @@ class MyHomePage extends StatelessWidget {
             "The Game",
             style: GoogleFonts.overpass(
                 textStyle:
-                    const TextStyle(fontSize: 20.0, color: Colors.white)),
+                    const TextStyle(fontSize: 20.0, color: Colors.black45)),
           ),
         ]),
       ),
@@ -59,11 +59,11 @@ class MyHomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const InfoPage()));
             },
             style: ElevatedButton.styleFrom(
-              primary: Colors.amber,
-              side: const BorderSide(width: 1, color: Colors.white),
-              padding: const EdgeInsets.fromLTRB(100, 110, 100, 110),
+              primary: Colors.white10,
+              side: const BorderSide(width: 2, color: Colors.white),
+              padding: const EdgeInsets.fromLTRB(100, 115, 100, 115),
               shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderRadius: BorderRadius.all(Radius.circular(200)),
               ),
             ),
             child: Text(

@@ -29,7 +29,7 @@ class _InfoPageState extends State<InfoPage> {
               centerTitle: true,
               automaticallyImplyLeading: false,
               toolbarHeight: 70,
-              backgroundColor: Colors.amber,
+              backgroundColor: Colors.white,
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -44,7 +44,7 @@ class _InfoPageState extends State<InfoPage> {
                     "Gathering",
                     style: GoogleFonts.overpass(
                         textStyle: const TextStyle(
-                            fontSize: 20.0, color: Colors.white)),
+                            fontSize: 20.0, color: Colors.black45)),
                   )
                 ],
               ),
@@ -69,9 +69,9 @@ class _InfoPageState extends State<InfoPage> {
                                 color: Colors.white.withOpacity(0.7),
                                 fontSize: 20.0),
                             enabledBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.amber)),
+                                borderSide: BorderSide(color: Colors.white)),
                             focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white))),
+                                borderSide: BorderSide(color: Colors.black))),
                         style: const TextStyle(color: Colors.white),
                         textAlign: TextAlign.center,
                       ),
@@ -92,9 +92,9 @@ class _InfoPageState extends State<InfoPage> {
                                 color: Colors.white.withOpacity(0.7),
                                 fontSize: 20.0),
                             enabledBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.amber)),
+                                borderSide: BorderSide(color: Colors.white)),
                             focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white))),
+                                borderSide: BorderSide(color: Colors.black))),
                         style: const TextStyle(color: Colors.white),
                         textAlign: TextAlign.center,
                       ),

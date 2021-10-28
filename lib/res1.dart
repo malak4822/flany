@@ -93,7 +93,7 @@ class _resoneGamePageState extends State<resoneGamePage> {
                 ),
               ]),
               Text(
-                "W drużynie jest po ${_gracze} graczy",
+                "W drużynie jest po $_gracze graczy",
                 style:
                     GoogleFonts.overpass(fontSize: 20.0, color: Colors.white),
               ),
