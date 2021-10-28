@@ -13,11 +13,12 @@ class InfoPage extends StatefulWidget {
   State<InfoPage> createState() => _InfoPageState();
 }
 
-int liczbagraczy = 10;
+int liczbagraczy = 0;
 
 class _InfoPageState extends State<InfoPage> {
   TextEditingController graczeCon = TextEditingController();
-  TextEditingController rundyCon = TextEditingController();
+
+  List<int> liczbynieparzyste = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25];
 
   @override
   Widget build(BuildContext context) {
@@ -78,28 +79,6 @@ class _InfoPageState extends State<InfoPage> {
                     ),
                   ),
                   const SizedBox(height: 80.0),
-                  Center(
-                    child: SizedBox(
-                      width: 250.0,
-                      child: TextFormField(
-                        controller: rundyCon,
-                        onChanged: (rundy) {},
-                        inputFormatters: [LengthLimitingTextInputFormatter(1)],
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "Liczba Rund",
-                            hintStyle: TextStyle(
-                                color: Colors.white.withOpacity(0.7),
-                                fontSize: 20.0),
-                            enabledBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
-                            focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black))),
-                        style: const TextStyle(color: Colors.white),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
                 ],
               ),
               Align(
@@ -121,12 +100,12 @@ class _InfoPageState extends State<InfoPage> {
                     Provider.of<ZmienneClass>(context, listen: false)
                         .setPlayerCount(
                             liczbagraczy: int.parse(graczeCon.text));
-
-                    Provider.of<ZmienneClass>(context, listen: false)
-                        .setRoundCount(liczbarund: int.parse(rundyCon.text));
-
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => FirGamePage()));
+                    {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FirGamePage()));
+                    }
                   },
                   child: Text("more",
                       style: GoogleFonts.oxygen(

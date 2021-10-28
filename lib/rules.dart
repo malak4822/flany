@@ -19,7 +19,7 @@ class _MyRulesPageState extends State<Rules> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70.0,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.white,
         title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text("RULES",
               style: GoogleFonts.josefinSans(
@@ -29,7 +29,7 @@ class _MyRulesPageState extends State<Rules> {
             "Of The Game",
             style: GoogleFonts.overpass(
                 textStyle:
-                    const TextStyle(fontSize: 20.0, color: Colors.white)),
+                    const TextStyle(fontSize: 20.0, color: Colors.black45)),
           ),
         ]),
       ),
@@ -54,7 +54,7 @@ class _MyRulesPageState extends State<Rules> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.overpass(
                         textStyle: const TextStyle(
-                            color: Color(0xffffe0b2), fontSize: 19.0))),
+                            color: Colors.white, fontSize: 19.0))),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 5, 15, 0),
@@ -62,40 +62,45 @@ class _MyRulesPageState extends State<Rules> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.overpass(
                         textStyle: const TextStyle(
-                            color: Colors.amber, fontSize: 23.0))),
+                            color: Colors.black, fontSize: 23.0))),
               ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        PageRouteBuilder(
-                            transitionsBuilder: (BuildContext context,
-                                Animation<double> animation,
-                                Animation<double> secAnimation,
-                                Widget child) {
-                              animation = CurvedAnimation(
-                                  parent: animation,
-                                  curve: Curves.fastLinearToSlowEaseIn);
-
-                              return ScaleTransition(
-                                scale: animation,
-                                child: child,
-                                alignment: Alignment.center,
-                              );
-                            },
-                            transitionDuration:
-                                const Duration(milliseconds: 300),
-                            pageBuilder: (BuildContext context,
-                                Animation<double> animation,
-                                Animation<double> secAnimation) {
-                              return const Rules2(title: "zasady2");
-                            }));
-                  },
-                  icon: const Icon(Icons.image, color: Colors.white, size: 35)),
             ],
           ),
+          Padding(
+              padding: const EdgeInsets.all(5),
+              child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                                transitionsBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secAnimation,
+                                    Widget child) {
+                                  animation = CurvedAnimation(
+                                      parent: animation,
+                                      curve: Curves.fastLinearToSlowEaseIn);
+
+                                  return ScaleTransition(
+                                    scale: animation,
+                                    child: child,
+                                    alignment: Alignment.center,
+                                  );
+                                },
+                                transitionDuration:
+                                    const Duration(milliseconds: 300),
+                                pageBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secAnimation) {
+                                  return const Rules2(title: "zasady2");
+                                }));
+                      },
+                      icon: const Icon(Icons.image,
+                          color: Colors.white, size: 30)))),
           Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.bottomRight,
               child: TextButton(
                   onPressed: () {
                     Navigator.pop(context);

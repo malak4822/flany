@@ -1,13 +1,12 @@
 import 'dart:math';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final List imageList = [
   "images/flany1.png",
-  "images/flany1.png",
-  "images/flany1.png"
+  "images/flany2.png",
+  "images/flany3.png"
 ];
 int activeIndex = 0;
 
@@ -28,7 +27,7 @@ class _MyRules2PageState extends State<Rules2> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70.0,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.white,
         title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text("IMAGE",
               style: GoogleFonts.josefinSans(
@@ -38,7 +37,7 @@ class _MyRules2PageState extends State<Rules2> {
             "In Rules",
             style: GoogleFonts.overpass(
                 textStyle:
-                    const TextStyle(fontSize: 20.0, color: Colors.white)),
+                    const TextStyle(fontSize: 20.0, color: Colors.black45)),
           ),
         ]),
       ),
