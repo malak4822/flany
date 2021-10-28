@@ -1,5 +1,4 @@
 import 'package:flany/game2.dart';
-import 'package:flany/informations.dart';
 import 'package:flany/res1.dart';
 import 'package:flany/results.dart';
 import 'package:flutter/material.dart';
