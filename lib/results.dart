@@ -77,14 +77,14 @@ class _resGamePageState extends State<resGamePage> {
                             ),
                             width: 150.0,
                             height: 150.0,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 color: Color.fromARGB(255, 8, 236, 124),
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
                                       color: Colors.white,
-                                      blurRadius: 4,
-                                      spreadRadius: 1)
+                                      blurRadius: 2.5,
+                                      spreadRadius: 2.5)
                                 ]),
                           ),
                           Container(
@@ -96,18 +96,18 @@ class _resGamePageState extends State<resGamePage> {
                             ),
                             width: 150.0,
                             height: 150.0,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 color: Color.fromARGB(255, 8, 240, 196),
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
                                       color: Colors.white,
-                                      blurRadius: 4,
-                                      spreadRadius: 1)
+                                      blurRadius: 2.5,
+                                      spreadRadius: 2.5)
                                 ]),
                           ),
                         ]),
-                    SizedBox(height: 60.0),
+                    const SizedBox(height: 60.0),
                     Text(
                       "Nietrafienia drużyn:",
                       style: GoogleFonts.overpass(
@@ -125,14 +125,14 @@ class _resGamePageState extends State<resGamePage> {
                           ),
                           width: 150.0,
                           height: 150.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Color.fromARGB(255, 8, 236, 124),
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
                                     color: Colors.white,
-                                    blurRadius: 4,
-                                    spreadRadius: 1)
+                                    blurRadius: 2.5,
+                                    spreadRadius: 2.5)
                               ]),
                         ),
                         Container(
@@ -144,14 +144,14 @@ class _resGamePageState extends State<resGamePage> {
                           ),
                           width: 150.0,
                           height: 150.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Color.fromARGB(255, 8, 240, 196),
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
                                     color: Colors.white,
-                                    blurRadius: 4,
-                                    spreadRadius: 1)
+                                    blurRadius: 2.5,
+                                    spreadRadius: 2.5)
                               ]),
                         ),
                       ],
