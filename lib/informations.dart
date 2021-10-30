@@ -104,7 +104,7 @@ class _InfoPageState extends State<InfoPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => FirGamePage()));
+                              builder: (context) => const FirGamePage()));
                     }
                   },
                   child: Text("more",

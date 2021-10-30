@@ -11,7 +11,7 @@ class SecGamePage extends StatefulWidget {
   final firTime;
   const SecGamePage({Key? key, this.firTime}) : super(key: key);
   @override
-  _SecGamePageState createState() => _SecGamePageState(this.firTime);
+  _SecGamePageState createState() => _SecGamePageState(firTime);
 }
 
 class _SecGamePageState extends State<SecGamePage> {
@@ -65,12 +65,12 @@ class _SecGamePageState extends State<SecGamePage> {
             children: [
               Stack(children: [
                 Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Text("Osoby: $_gracze",
                         style: GoogleFonts.overpass(
                             color: Colors.white, fontSize: 20.0))),
                 Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Align(
                       alignment: Alignment.topRight,
                       child: Text("Runda nr: $_currentrunda",
@@ -156,7 +156,7 @@ class _SecGamePageState extends State<SecGamePage> {
                                       pageBuilder: (BuildContext context,
                                           Animation<double> animation,
                                           Animation<double> secAnimation) {
-                                        return FirGamePage();
+                                        return const FirGamePage();
                                       }));
                             },
                             style: ElevatedButton.styleFrom(
@@ -221,7 +221,7 @@ class _SecGamePageState extends State<SecGamePage> {
                                   pageBuilder: (BuildContext context,
                                       Animation<double> animation,
                                       Animation<double> secAnimation) {
-                                    return FirGamePage();
+                                    return const FirGamePage();
                                   }));
                         },
                         child: const Icon(Icons.close,
@@ -241,10 +241,10 @@ class _SecGamePageState extends State<SecGamePage> {
                   ),
                 )
               ]),
-              restwoGamePage()
+              const RestwoGamePage()
             ],
           ),
-          resGamePage()
+          const ResGamePage()
         ],
       ),
     );

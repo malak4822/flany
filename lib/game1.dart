@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 class FirGamePage extends StatefulWidget {
-  FirGamePage({Key? key, firTime, secTime}) : super(key: key);
+  const FirGamePage({Key? key, firTime, secTime}) : super(key: key);
   @override
   _FirGamePageState createState() => _FirGamePageState();
 }
@@ -63,7 +63,7 @@ class _FirGamePageState extends State<FirGamePage> {
               children: [
                 Stack(children: [
                   Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text("Osoby: $_gracze",
@@ -71,7 +71,7 @@ class _FirGamePageState extends State<FirGamePage> {
                                 color: Colors.white, fontSize: 20.0)),
                       )),
                   Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Align(
                           alignment: Alignment.topRight,
                           child: Text("Runda nr: $_currentrunda",
@@ -225,7 +225,7 @@ class _FirGamePageState extends State<FirGamePage> {
                                       pageBuilder: (BuildContext context,
                                           Animation<double> animation,
                                           Animation<double> secAnimation) {
-                                        return SecGamePage();
+                                        return const SecGamePage();
                                       }));
                             },
                             child: const Icon(Icons.close,
@@ -243,10 +243,10 @@ class _FirGamePageState extends State<FirGamePage> {
                         const SizedBox(height: 50.0),
                       ])),
                 ]),
-                resoneGamePage()
+                const ResoneGamePage()
               ],
             ),
-            resGamePage()
+            const ResGamePage()
           ],
         ));
   }

@@ -4,23 +4,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
-class restwoGamePage extends StatefulWidget {
+class RestwoGamePage extends StatefulWidget {
   final firTime;
   final secTime;
   final missed;
   final missed1;
-  const restwoGamePage(
+  const RestwoGamePage(
       {Key? key, this.firTime, this.secTime, this.missed, this.missed1})
       : super(key: key);
   @override
-  _restwoGamePageState createState() => _restwoGamePageState();
+  _RestwoGamePageState createState() => _RestwoGamePageState();
 }
 
-class _restwoGamePageState extends State<restwoGamePage> {
+class _RestwoGamePageState extends State<RestwoGamePage> {
   final _scrollController = ScrollController();
 
-  _restwoGamePageState();
+  _RestwoGamePageState();
 
+  @override
   void dispose() {
     super.dispose();
     _stopWatchTimer.dispose();
@@ -42,7 +43,7 @@ class _restwoGamePageState extends State<restwoGamePage> {
             backgroundColor: const Color.fromARGB(255, 84, 84, 84),
             body: Stack(alignment: Alignment.bottomCenter, children: [
               Column(children: [
-                SizedBox(height: 50.0),
+                const SizedBox(height: 50.0),
                 Text(
                   "Czas drużyny:",
                   style:
@@ -60,13 +61,13 @@ class _restwoGamePageState extends State<restwoGamePage> {
                         ),
                         width: 150.0,
                         height: 150.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 8, 236, 124),
                           shape: BoxShape.circle,
                         ),
                       ),
                     ]),
-                SizedBox(height: 60.0),
+                const SizedBox(height: 60.0),
                 Text(
                   "Nietrafienia drużyny:",
                   style:
@@ -84,7 +85,7 @@ class _restwoGamePageState extends State<restwoGamePage> {
                       ),
                       width: 150.0,
                       height: 150.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 8, 236, 124),
                         shape: BoxShape.circle,
                       ),
@@ -93,11 +94,10 @@ class _restwoGamePageState extends State<restwoGamePage> {
                 ),
               ]),
               Text(
-                "W drużynie jest po ${_gracze} graczy",
+                "W drużynie jest po $_gracze graczy",
                 style:
                     GoogleFonts.overpass(fontSize: 20.0, color: Colors.white),
               ),
-              SizedBox(height: 30.0)
             ])));
   }
 }

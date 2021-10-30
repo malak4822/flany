@@ -4,23 +4,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
-class resoneGamePage extends StatefulWidget {
+class ResoneGamePage extends StatefulWidget {
   final firTime;
   final secTime;
   final missed;
   final missed1;
-  const resoneGamePage(
+  const ResoneGamePage(
       {Key? key, this.firTime, this.secTime, this.missed, this.missed1})
       : super(key: key);
   @override
-  _resoneGamePageState createState() => _resoneGamePageState();
+  _ResoneGamePageState createState() => _ResoneGamePageState();
 }
 
-class _resoneGamePageState extends State<resoneGamePage> {
+class _ResoneGamePageState extends State<ResoneGamePage> {
   final _scrollController = ScrollController();
 
-  _resoneGamePageState();
+  _ResoneGamePageState();
 
+  @override
   void dispose() {
     super.dispose();
     _stopWatchTimer.dispose();
@@ -42,7 +43,7 @@ class _resoneGamePageState extends State<resoneGamePage> {
             backgroundColor: const Color.fromARGB(255, 84, 84, 84),
             body: Stack(alignment: Alignment.bottomCenter, children: [
               Column(children: [
-                SizedBox(height: 50.0),
+                const SizedBox(height: 50.0),
                 Text(
                   "Czas drużyny:",
                   style:
@@ -60,13 +61,13 @@ class _resoneGamePageState extends State<resoneGamePage> {
                         ),
                         width: 150.0,
                         height: 150.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 8, 236, 124),
                           shape: BoxShape.circle,
                         ),
                       ),
                     ]),
-                SizedBox(height: 60.0),
+                const SizedBox(height: 60.0),
                 Text(
                   "Nietrafienia drużyny:",
                   style:
@@ -84,7 +85,7 @@ class _resoneGamePageState extends State<resoneGamePage> {
                       ),
                       width: 150.0,
                       height: 150.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 8, 236, 124),
                         shape: BoxShape.circle,
                       ),
@@ -97,7 +98,6 @@ class _resoneGamePageState extends State<resoneGamePage> {
                 style:
                     GoogleFonts.overpass(fontSize: 20.0, color: Colors.white),
               ),
-              SizedBox(height: 30.0)
             ])));
   }
 }
