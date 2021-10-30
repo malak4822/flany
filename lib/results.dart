@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:flany/game2.dart';
 import 'package:flany/zmienne.dart';
 import 'package:flutter/material.dart';
