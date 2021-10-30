@@ -76,6 +76,7 @@ class _MyRulesPageState extends State<Rules> {
                       quarterTurns: 1,
                       child: IconButton(
                         splashColor: Colors.black,
+                        highlightColor: Colors.black45,
                         iconSize: 66.0,
                         onPressed: () {
                           Navigator.pop(context);
@@ -117,6 +118,7 @@ class _MyRulesPageState extends State<Rules> {
                       },
                       splashRadius: 50,
                       splashColor: Colors.black,
+                      highlightColor: Colors.black45,
                       icon: const Icon(Icons.image, color: Colors.white)))),
         ],
       ),

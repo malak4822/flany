@@ -69,7 +69,7 @@ class _ResGamePageState extends State<ResGamePage> {
                       Column(children: [
                         const SizedBox(height: 50.0),
                         Text(
-                          "Czasy drużyn:",
+                          "Czasy picia drużyn:",
                           style: GoogleFonts.overpass(
                               fontSize: 40.0, color: Colors.white),
                         ),
@@ -80,6 +80,7 @@ class _ResGamePageState extends State<ResGamePage> {
                                 alignment: Alignment.center,
                                 child: Text(
                                   "${suma1 / 1000}",
+                                  maxLines: 1,
                                   style: GoogleFonts.overpass(
                                       fontSize: 50.0, color: Colors.white),
                                 ),
@@ -99,6 +100,7 @@ class _ResGamePageState extends State<ResGamePage> {
                                 alignment: Alignment.center,
                                 child: Text(
                                   "${suma2 / 1000}",
+                                  maxLines: 1,
                                   style: GoogleFonts.overpass(
                                       fontSize: 50.0, color: Colors.white),
                                 ),

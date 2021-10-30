@@ -109,6 +109,7 @@ class _MyRules2PageState extends State<Rules2> {
                                   }));
                         },
                         icon: const Icon(Icons.not_started_rounded),
+                        highlightColor: Colors.black45,
                         color: Colors.white,
                       ))))
         ],

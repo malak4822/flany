@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flany/game2.dart';
 import 'package:flany/res1.dart';
 import 'package:flany/results.dart';
@@ -94,6 +96,9 @@ class _FirGamePageState extends State<FirGamePage> {
                                           hours: false, minute: false);
 
                                   return Text(displayTime,
+                                      textWidthBasis:
+                                          TextWidthBasis.longestLine,
+                                      maxLines: 1,
                                       style: GoogleFonts.overpass(
                                         color: Colors.white,
                                         fontSize: 90.0,

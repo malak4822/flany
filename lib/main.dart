@@ -81,23 +81,23 @@ class MyHomePage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 primary: Colors.white10,
                 side: const BorderSide(width: 2, color: Colors.white),
-                padding: const EdgeInsets.all(120),
+                padding: const EdgeInsets.all(80),
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(200)),
                 ),
               ),
               child: SizedBox(
-                  width: 90.0,
-                  height: 90.0,
+                  width: 160.0,
+                  height: 160.0,
                   child: Column(
                     children: [
                       const RotatedBox(
                           quarterTurns: 3,
                           child: Icon(
                             Icons.not_started_rounded,
-                            size: 70.0,
+                            size: 140.0,
                           )),
-                      Text("Start", style: GoogleFonts.aBeeZee())
+                      Text("Start", style: GoogleFonts.aBeeZee(fontSize: 16.0))
                     ],
                   ))),
           Padding(
@@ -132,6 +132,7 @@ class MyHomePage extends StatelessWidget {
                           }));
                 },
                 icon: const Icon(Icons.rule),
+                highlightColor: Colors.black45,
                 color: Colors.white,
               ),
             ),

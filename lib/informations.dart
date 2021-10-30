@@ -96,7 +96,9 @@ class _InfoPageState extends State<InfoPage> {
                                 MaterialPageRoute(
                                     builder: (context) => const MyApp()));
                           },
-                          iconSize: 50.0,
+                          iconSize: 70.0,
+                          splashColor: Colors.black,
+                          highlightColor: Colors.black45,
                           icon: const Icon(Icons.not_started_rounded,
                               color: Colors.white),
                         ),
@@ -117,7 +119,9 @@ class _InfoPageState extends State<InfoPage> {
                                 builder: (context) => const FirGamePage()));
                       }
                     },
-                    iconSize: 55.0,
+                    iconSize: 70.0,
+                    splashColor: Colors.black,
+                    highlightColor: Colors.black45,
                     icon: const Icon(Icons.not_started_rounded,
                         color: Colors.white),
                   ),
