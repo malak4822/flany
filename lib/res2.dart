@@ -61,8 +61,12 @@ class _RestwoGamePageState extends State<RestwoGamePage> {
                         ),
                         width: 150.0,
                         height: 150.0,
-                        decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 8, 236, 124),
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 3, color: Colors.white),
+                          gradient: const LinearGradient(colors: [
+                            Color.fromARGB(255, 8, 236, 124),
+                            Color.fromARGB(255, 8, 240, 196),
+                          ]),
                           shape: BoxShape.circle,
                         ),
                       ),
@@ -85,8 +89,12 @@ class _RestwoGamePageState extends State<RestwoGamePage> {
                       ),
                       width: 150.0,
                       height: 150.0,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 8, 236, 124),
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 3, color: Colors.white),
+                        gradient: const LinearGradient(colors: [
+                          Color.fromARGB(255, 8, 236, 124),
+                          Color.fromARGB(255, 8, 240, 196),
+                        ]),
                         shape: BoxShape.circle,
                       ),
                     ),

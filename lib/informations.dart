@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flany/game1.dart';
 import 'package:flany/main.dart';
 import 'package:flany/zmienne.dart';
@@ -81,37 +83,46 @@ class _InfoPageState extends State<InfoPage> {
                   const SizedBox(height: 80.0),
                 ],
               ),
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const MyApp()));
-                  },
-                  child: Text("back",
-                      style: GoogleFonts.oxygen(
-                          textStyle: const TextStyle(color: Colors.white))),
+              Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
+                  child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Transform.rotate(
+                        angle: pi,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MyApp()));
+                          },
+                          iconSize: 50.0,
+                          icon: const Icon(Icons.not_started_rounded,
+                              color: Colors.white),
+                        ),
+                      ))),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: IconButton(
+                    onPressed: () {
+                      Provider.of<ZmienneClass>(context, listen: false)
+                          .setPlayerCount(
+                              liczbagraczy: int.parse(graczeCon.text));
+                      {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FirGamePage()));
+                      }
+                    },
+                    iconSize: 55.0,
+                    icon: const Icon(Icons.not_started_rounded,
+                        color: Colors.white),
+                  ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: TextButton(
-                  onPressed: () {
-                    Provider.of<ZmienneClass>(context, listen: false)
-                        .setPlayerCount(
-                            liczbagraczy: int.parse(graczeCon.text));
-                    {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const FirGamePage()));
-                    }
-                  },
-                  child: Text("more",
-                      style: GoogleFonts.oxygen(
-                          textStyle: const TextStyle(color: Colors.white))),
-                ),
-              ),
+              )
             ])));
   }
 }

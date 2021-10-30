@@ -165,54 +165,60 @@ class _ResGamePageState extends State<ResGamePage> {
                           ],
                         ),
                       ]),
-                      Align(
-                          alignment: Alignment.bottomRight,
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  PageRouteBuilder(
-                                      transitionsBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation,
-                                          Widget child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve:
-                                                Curves.fastLinearToSlowEaseIn);
-
-                                        return ScaleTransition(
-                                          scale: animation,
-                                          child: child,
-                                          alignment: Alignment.center,
-                                        );
-                                      },
-                                      transitionDuration:
-                                          const Duration(milliseconds: 300),
-                                      pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double> secAnimation) {
-                                        return const SecGamePage();
-                                      }));
-                              Provider.of<ZmienneClass>(context, listen: false)
-                                  .dodRund();
-                            },
-                            child: Text("end round",
-                                style: GoogleFonts.almarai(
-                                    fontSize: 20.0, color: Colors.white)),
-                          )),
                       Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 20),
+                          child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: IconButton(
+                                iconSize: 90.0,
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      PageRouteBuilder(
+                                          transitionsBuilder: (BuildContext
+                                                  context,
+                                              Animation<double> animation,
+                                              Animation<double> secAnimation,
+                                              Widget child) {
+                                            animation = CurvedAnimation(
+                                                parent: animation,
+                                                curve: Curves
+                                                    .fastLinearToSlowEaseIn);
+
+                                            return ScaleTransition(
+                                              scale: animation,
+                                              child: child,
+                                              alignment: Alignment.center,
+                                            );
+                                          },
+                                          transitionDuration:
+                                              const Duration(milliseconds: 300),
+                                          pageBuilder: (BuildContext context,
+                                              Animation<double> animation,
+                                              Animation<double> secAnimation) {
+                                            return const SecGamePage();
+                                          }));
+                                  Provider.of<ZmienneClass>(context,
+                                          listen: false)
+                                      .dodRund();
+                                },
+                                color: Colors.white,
+                                focusColor: Colors.red,
+                                icon: const Icon(Icons.restart_alt),
+                              ))),
+                      Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 20),
                           child: Align(
                               alignment: Alignment.bottomLeft,
                               child: IconButton(
+                                  iconSize: 90,
                                   onPressed: () async {
                                     final ss = await kontroler.capture();
                                     if (ss == null) return;
                                     await saveImage(ss);
                                   },
                                   icon: const Icon(Icons.screenshot,
-                                      color: Colors.white, size: 50))))
+                                      color: Colors.white))))
                     ])))));
   }
 

@@ -54,30 +54,59 @@ class MyHomePage extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         children: [
           ElevatedButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const InfoPage()));
-            },
-            style: ElevatedButton.styleFrom(
-              primary: Colors.white10,
-              side: const BorderSide(width: 2, color: Colors.white),
-              padding: const EdgeInsets.fromLTRB(100, 115, 100, 115),
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(200)),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        transitionsBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation,
+                            Widget child) {
+                          animation = CurvedAnimation(
+                              parent: animation, curve: Curves.fastOutSlowIn);
+
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                            alignment: Alignment.topCenter,
+                          );
+                        },
+                        transitionDuration: const Duration(milliseconds: 100),
+                        pageBuilder: (BuildContext context,
+                            Animation<double> animation,
+                            Animation<double> secAnimation) {
+                          return const InfoPage();
+                        }));
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white10,
+                side: const BorderSide(width: 2, color: Colors.white),
+                padding: const EdgeInsets.all(120),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(200)),
+                ),
               ),
-            ),
-            child: Text(
-              "Start",
-              style: GoogleFonts.overpass(
-                  textStyle: const TextStyle(
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.w100,
-                      color: Colors.black)),
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: TextButton(
+              child: SizedBox(
+                  width: 90.0,
+                  height: 90.0,
+                  child: Column(
+                    children: [
+                      const RotatedBox(
+                          quarterTurns: 3,
+                          child: Icon(
+                            Icons.not_started_rounded,
+                            size: 70.0,
+                          )),
+                      Text("Start", style: GoogleFonts.aBeeZee())
+                    ],
+                  ))),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: IconButton(
+                splashColor: Colors.black,
+                iconSize: 50.0,
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -102,10 +131,11 @@ class MyHomePage extends StatelessWidget {
                             return const Rules(title: 'Zasady');
                           }));
                 },
-                child: Text("rules",
-                    style: GoogleFonts.oxygen(
-                        textStyle: const TextStyle(color: Colors.white)))),
-          ),
+                icon: const Icon(Icons.rule),
+                color: Colors.white,
+              ),
+            ),
+          )
         ],
       ),
     );

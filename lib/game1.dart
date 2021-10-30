@@ -95,9 +95,9 @@ class _FirGamePageState extends State<FirGamePage> {
 
                                   return Text(displayTime,
                                       style: GoogleFonts.overpass(
-                                          fontSize: 60.0,
-                                          color: const Color.fromARGB(
-                                              255, 8, 236, 124)));
+                                        color: Colors.white,
+                                        fontSize: 90.0,
+                                      ));
                                 }),
                           ),
                         ],
@@ -111,17 +111,17 @@ class _FirGamePageState extends State<FirGamePage> {
                                     .add(StopWatchExecute.start);
                               },
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.white,
+                                  primary: Colors.white12,
                                   side: const BorderSide(
                                       width: 1,
                                       color: Color.fromARGB(225, 8, 236, 124)),
-                                  padding: const EdgeInsets.all(37.5),
+                                  padding: const EdgeInsets.all(50),
                                   shape: const RoundedRectangleBorder(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(80)),
+                                        BorderRadius.all(Radius.circular(100)),
                                   )),
                               child: const Icon(Icons.circle,
-                                  color: Colors.black26, size: 30)),
+                                  color: Colors.black26, size: 40)),
                           const SizedBox(width: 40.0),
                           //
                           //PRZYCISK TRAFIONY
@@ -164,23 +164,18 @@ class _FirGamePageState extends State<FirGamePage> {
                                         }));
                               },
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.white,
+                                  primary: Colors.white12,
                                   side: const BorderSide(
                                       width: 1,
                                       color: Color.fromARGB(225, 8, 236, 124)),
-                                  padding: const EdgeInsets.all(32.5),
+                                  padding: const EdgeInsets.all(42.5),
                                   shape: const RoundedRectangleBorder(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(80)),
+                                        BorderRadius.all(Radius.circular(100)),
                                   )),
                               child: const Icon(Icons.stop_rounded,
-                                  color: Colors.black26, size: 40)),
+                                  color: Colors.black26, size: 55)),
                         ],
-                      ),
-                      const SizedBox(height: 30.0),
-                      Container(
-                        height: 200.0,
-                        margin: const EdgeInsets.all(10),
                       ),
                     ],
                   ),
@@ -191,7 +186,7 @@ class _FirGamePageState extends State<FirGamePage> {
                       child: Column(children: [
                         Text("Missed",
                             style: GoogleFonts.josefinSans(
-                                fontSize: 20.0,
+                                fontSize: 40.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400)),
                         //
@@ -229,18 +224,19 @@ class _FirGamePageState extends State<FirGamePage> {
                                       }));
                             },
                             child: const Icon(Icons.close,
-                                color: Colors.red, size: 35),
+                                color: Color.fromARGB(225, 8, 236, 124),
+                                size: 70),
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white12,
                               side: const BorderSide(
                                   color: Colors.white, width: 1.0),
-                              padding: const EdgeInsets.all(40.0),
+                              padding: const EdgeInsets.all(80.0),
                               shape: const RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(40)),
                               ),
                             )),
-                        const SizedBox(height: 50.0),
+                        const SizedBox(height: 40.0),
                       ])),
                 ]),
                 const ResoneGamePage()

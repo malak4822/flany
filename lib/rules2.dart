@@ -73,18 +73,44 @@ class _MyRules2PageState extends State<Rules2> {
               ),
             ],
           ),
-          Align(
-              alignment: Alignment.bottomCenter,
-              child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    "back",
-                    style: GoogleFonts.oxygen(
-                        textStyle: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w400)),
-                  )))
+          Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+              child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: RotatedBox(
+                      quarterTurns: 1,
+                      child: IconButton(
+                        splashColor: Colors.black,
+                        iconSize: 60.0,
+                        onPressed: () {
+                          Navigator.pop(
+                              context,
+                              PageRouteBuilder(
+                                  transitionsBuilder: (BuildContext context,
+                                      Animation<double> animation,
+                                      Animation<double> secAnimation,
+                                      Widget child) {
+                                    animation = CurvedAnimation(
+                                        parent: animation,
+                                        curve: Curves.fastLinearToSlowEaseIn);
+
+                                    return ScaleTransition(
+                                      scale: animation,
+                                      child: child,
+                                      alignment: Alignment.center,
+                                    );
+                                  },
+                                  transitionDuration:
+                                      const Duration(milliseconds: 300),
+                                  pageBuilder: (BuildContext context,
+                                      Animation<double> animation,
+                                      Animation<double> secAnimation) {
+                                    return const Rules2(title: "zasady2");
+                                  }));
+                        },
+                        icon: const Icon(Icons.not_started_rounded),
+                        color: Colors.white,
+                      ))))
         ],
       ),
     );

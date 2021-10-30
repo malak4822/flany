@@ -95,9 +95,7 @@ class _SecGamePageState extends State<SecGamePage> {
 
                                 return Text(displayTime,
                                     style: GoogleFonts.overpass(
-                                        fontSize: 60.0,
-                                        color: const Color.fromARGB(
-                                            255, 8, 240, 196)));
+                                        fontSize: 90.0, color: Colors.white));
                               }),
                         ),
                       ],
@@ -111,17 +109,17 @@ class _SecGamePageState extends State<SecGamePage> {
                                   .add(StopWatchExecute.start);
                             },
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.white,
+                                primary: Colors.white12,
                                 side: const BorderSide(
                                     width: 1,
                                     color: Color.fromARGB(255, 8, 240, 196)),
-                                padding: const EdgeInsets.all(37.5),
+                                padding: const EdgeInsets.all(50),
                                 shape: const RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(80)),
                                 )),
                             child: const Icon(Icons.circle,
-                                color: Colors.black26, size: 30)),
+                                color: Colors.black26, size: 40)),
                         const SizedBox(width: 40.0),
                         //
                         //PRZYCISK TRAFIONY
@@ -160,17 +158,17 @@ class _SecGamePageState extends State<SecGamePage> {
                                       }));
                             },
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.white,
+                                primary: Colors.white12,
                                 side: const BorderSide(
                                     width: 1,
                                     color: Color.fromARGB(255, 8, 240, 196)),
-                                padding: const EdgeInsets.all(32.5),
+                                padding: const EdgeInsets.all(42.5),
                                 shape: const RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(80)),
                                 )),
                             child: const Icon(Icons.stop_rounded,
-                                color: Colors.black26, size: 40)),
+                                color: Colors.black26, size: 55)),
                       ],
                     ),
                     const SizedBox(height: 30.0),
@@ -188,7 +186,7 @@ class _SecGamePageState extends State<SecGamePage> {
                     children: [
                       Text("Missed",
                           style: GoogleFonts.josefinSans(
-                              fontSize: 20.0,
+                              fontSize: 40.0,
                               color: Colors.white,
                               fontWeight: FontWeight.w400)),
                       //
@@ -225,18 +223,18 @@ class _SecGamePageState extends State<SecGamePage> {
                                   }));
                         },
                         child: const Icon(Icons.close,
-                            color: Colors.red, size: 35),
+                            color: Color.fromARGB(255, 8, 240, 196), size: 70),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white12,
                           side:
                               const BorderSide(color: Colors.white, width: 1.0),
-                          padding: const EdgeInsets.all(40.0),
+                          padding: const EdgeInsets.all(80.0),
                           shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(40)),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 50.0),
+                      const SizedBox(height: 40.0),
                     ],
                   ),
                 )

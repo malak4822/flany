@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flany/rules2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,7 +40,7 @@ class _MyRulesPageState extends State<Rules> {
           ListView(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
                 child: Text("Piwo to moje paliwo \n~Friedrich Nietzsche",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.overpass(
@@ -67,10 +69,26 @@ class _MyRulesPageState extends State<Rules> {
             ],
           ),
           Padding(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
               child: Align(
                   alignment: Alignment.bottomLeft,
+                  child: RotatedBox(
+                      quarterTurns: 1,
+                      child: IconButton(
+                        splashColor: Colors.black,
+                        iconSize: 66.0,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.not_started_rounded,
+                            color: Colors.white),
+                      )))),
+          Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 10, 10),
+              child: Align(
+                  alignment: Alignment.bottomRight,
                   child: IconButton(
+                      iconSize: 60.0,
                       onPressed: () {
                         Navigator.push(
                             context,
@@ -86,7 +104,7 @@ class _MyRulesPageState extends State<Rules> {
                                   return ScaleTransition(
                                     scale: animation,
                                     child: child,
-                                    alignment: Alignment.center,
+                                    alignment: Alignment.bottomCenter,
                                   );
                                 },
                                 transitionDuration:
@@ -97,20 +115,9 @@ class _MyRulesPageState extends State<Rules> {
                                   return const Rules2(title: "zasady2");
                                 }));
                       },
-                      icon: const Icon(Icons.image,
-                          color: Colors.white, size: 30)))),
-          Align(
-              alignment: Alignment.bottomRight,
-              child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    "back",
-                    style: GoogleFonts.oxygen(
-                        textStyle: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w400)),
-                  )))
+                      splashRadius: 50,
+                      splashColor: Colors.black,
+                      icon: const Icon(Icons.image, color: Colors.white)))),
         ],
       ),
     );
