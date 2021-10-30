@@ -10,23 +10,24 @@ import 'package:provider/provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
-class resGamePage extends StatefulWidget {
+class ResGamePage extends StatefulWidget {
   final firTime;
   final secTime;
   final missed;
   final missed1;
-  const resGamePage(
+  const ResGamePage(
       {Key? key, this.firTime, this.secTime, this.missed, this.missed1})
       : super(key: key);
   @override
-  _resGamePageState createState() => _resGamePageState();
+  _ResGamePageState createState() => _ResGamePageState();
 }
 
-class _resGamePageState extends State<resGamePage> {
+class _ResGamePageState extends State<ResGamePage> {
   final _scrollController = ScrollController();
 
-  _resGamePageState();
+  _ResGamePageState();
 
+  @override
   void dispose() {
     super.dispose();
     _stopWatchTimer.dispose();
@@ -192,7 +193,7 @@ class _resGamePageState extends State<resGamePage> {
                                       pageBuilder: (BuildContext context,
                                           Animation<double> animation,
                                           Animation<double> secAnimation) {
-                                        return SecGamePage();
+                                        return const SecGamePage();
                                       }));
                               Provider.of<ZmienneClass>(context, listen: false)
                                   .dodRund();
